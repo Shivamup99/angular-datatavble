@@ -1,0 +1,24 @@
+.thumb-image{
+  width:90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.search-box{
+  width: 30%;
+  margin-top: 3rem;
+}
+
+thead, tbody tr {
+  display:table;
+  width: 100vw;
+  table-layout:fixed;
+}
+thead {
+  width: calc( 100vw - 1em )
+}
+
+.fa{
+  display: inline;
+}

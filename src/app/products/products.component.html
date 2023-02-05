@@ -1,0 +1,66 @@
+<div class="conatainer px-5">
+  <div class="form-group search-box">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      [(ngModel)]="filterTerm"
+    />
+  </div>
+  <!-- datatable [dtOptions]="dtoptions" [dtTrigger]="dttrigger" -->
+  <div class="table-responsive">
+    <table class="table mt-5  table-hover table-bordered">
+      <thead>
+        <tr>
+          <th  (click)="sort('id')" scope="col">Id&nbsp;<i class="fa fa-sort"></i> </th>
+          <th  (click)="sort('id')" scope="col">Title&nbsp;<i class="fa fa-sort"></i> </th>
+          <th  (click)="sort('id')" scope="col">Brand&nbsp;<i class="fa fa-sort"></i> </th>
+          <th  (click)="sort('id')" scope="col">Category&nbsp;<i class="fa fa-sort"></i> </th>
+          <th (click)="sort('id')" scope="col">Price&nbsp;<i class="fa fa-sort"></i> </th>
+          <th  (click)="sort('id')" scope="col">Description&nbsp;<i class="fa fa-sort"></i> </th>
+          <th scope="col">Thumbnail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products | slice: (page - 1) * tableSize: (page - 1) * tableSize + tableSize | filter: filterTerm | orderBy:key: reverse  | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+              let i = index">
+          <td>{{product?.id}}</td>
+          <td>{{product?.title}}</td>
+          <td>{{product?.brand}}</td>
+          <td>{{product?.category}}</td>
+          <td>{{product?.price | currency}}</td>
+          <td>{{product?.description}}</td>
+          <td>
+            <img src={{product.thumbnail}} alt="urr" class="thumb-image"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+    <div class="d-flex justify-content-end">
+      <div class="form-group">
+        <label for="pageSize">Show</label>
+        <select class="form-control" [(ngModel)]="tableSize" (ngModelChange)="setPageSize()" id="pageSize">
+          <option [ngValue]="5">5</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="30">20</option>
+        </select>
+        <label for="pageSize">entries per page</label>
+      </div>
+  </div>
+</div>
+
