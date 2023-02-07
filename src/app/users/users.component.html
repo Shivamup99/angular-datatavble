@@ -1,0 +1,48 @@
+<table class="table mt-5  table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id&nbsp;<i class="fa fa-sort"></i> </th>
+      <th scope="col">Title&nbsp;<i class="fa fa-sort"></i> </th>
+      <th scope="col">Brand&nbsp;<i class="fa fa-sort"></i> </th>
+      <th  scope="col">Category&nbsp;<i class="fa fa-sort"></i> </th>
+      <th  scope="col">Price&nbsp;<i class="fa fa-sort"></i> </th>
+      <th  scope="col">Description&nbsp;<i class="fa fa-sort"></i> </th>
+      <th scope="col">Thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productsData
+          let i = index">
+      <td>{{product?.id}}</td>
+      <td>{{product?.title}}</td>
+      <td>{{product?.brand}}</td>
+      <td>{{product?.category}}</td>
+      <td>{{product?.price | currency}}</td>
+      <td>{{product?.description}}</td>
+      <td>
+        <img src={{product.thumbnail}} alt="urr" class="thumb-image"/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row pagination-data">
+  <div class="col-md-2 d-flex justify-content-center">
+    <div class="form-inline float-left mr-5">
+      <select class="form-control" [value]="productPerPage" (change)="changePageSize($event)">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="25">25</option>
+      </select>
+    </div>
+    <div class="btn-group float-end">
+      <button class="btn btn-primary m-5" [disabled]="selectedPage==1" (click)="changePage(selectedPage-1)">Previous</button>
+      <div class="btn btn-outline-info active" *ngFor="let page of pageNumbers" (click)="changePage(page)"
+      [class.active]="page==selectedPage"
+      >{{page}}</div>
+      <button class="btn btn-primary" [disabled]="selectedPage==pageNumbers.length" (click)="changePage(selectedPage+1)">Next</button>
+
+    </div>
+  </div>
+</div>

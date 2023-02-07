@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl:'https://dummyjson.com/products?limit=100'
+  baseUrl:'https://dummyjson.com/products'
 };
