@@ -13,12 +13,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { UsersComponent } from './users/users.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     UsersComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,9 @@
+
+<div class="form-group">
+  <input type="text" class="form-control search-field" placeholder="Search Here" [(ngModel)]="searchText">
+</div>
+
+
 <table class="table mt-5  table-hover table-bordered">
   <thead>
     <tr>
@@ -11,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productsData
+    <tr *ngFor="let product of productsData | searchFilter: searchText
           let i = index">
       <td>{{product?.id}}</td>
       <td>{{product?.title}}</td>

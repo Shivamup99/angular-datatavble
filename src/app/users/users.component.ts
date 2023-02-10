@@ -7,7 +7,7 @@ import { ProductsService } from 'src/services/products/products.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit{
-
+  searchText:any
   products:any[] = [];
   productsData:any[] = [];
   selectedPage =1;
