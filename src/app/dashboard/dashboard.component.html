@@ -1,0 +1,102 @@
+<section class="d-flex flex-column h-100">
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="d-flex">
+            <button (click)="clicktoEmptyEmp()" class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#add">Add Employee</button>
+        </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Begin page content -->
+  <main class="flex-shrink-0 main-clss">
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">EmpId</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Accupation</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employee">
+            <th>{{emp?.empId}}</th>
+            <td>{{emp?.name}}</td>
+            <td>{{emp?.email}}</td>
+            <td>{{emp?.accupation}}</td>
+            <td>{{emp?.salary}}</td>
+            <td>
+              <button (click)="_onEditRow(emp)" class="btn btn-info mx-2" type="button" data-bs-toggle="modal" data-bs-target="#add">Edit</button>
+              <button class="btn btn-danger" (click)="_deleteOneEmployee(emp.id)">delete</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+  </footer>
+
+
+ </section>
+
+
+ <div class="modal fade" id="add" tabindex="-1" aria-labelledby="addLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="showCreate">Add Employee</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel" *ngIf="showUpdate">Update Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="empId" class="form-label">Employee ID</label>
+            <input formControlName="empId" type="text" class="form-control" id="empId">
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Employee Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+          <div class="mb-3">
+            <label for="accupation" class="form-label">Employee Accupation</label>
+            <input formControlName="accupation" type="text" class="form-control" id="accupation">
+          </div>
+          <div class="mb-3">
+            <label for="salary" class="form-label">Employee Salary</label>
+            <input formControlName="salary" type="text" class="form-control" id="salary">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showCreate"  class="btn btn-primary" (click)="postEmployee()">Submit</button>
+        <button type="button" *ngIf="showUpdate" class="btn btn-info" (click)="updateEmployee()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>

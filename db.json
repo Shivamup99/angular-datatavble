@@ -1,0 +1,88 @@
+{
+  "posts": [
+    {
+      "empId": "P1346001",
+      "name": "Rohit Sharma",
+      "email": "shivam@gmail.com",
+      "accupation": "Manager",
+      "salary": "600000",
+      "id": 3
+    },
+    {
+      "empId": "P1346872",
+      "name": "Araya Singh",
+      "email": "shivam5@gmail.com",
+      "accupation": "Software Associate",
+      "salary": "200000",
+      "id": 4
+    },
+    {
+      "empId": "P1346873",
+      "name": "Lakhan Singh",
+      "email": "lakhan@gmail.com",
+      "accupation": "Software Associate",
+      "salary": "100000",
+      "id": 5
+    },
+    {
+      "empId": "P1346876",
+      "name": "Shiva Singh",
+      "email": "shiva@gmail.com",
+      "accupation": "Finance Department",
+      "salary": "900000",
+      "id": 7
+    },
+    {
+      "empId": "P1346808",
+      "name": "Amit Singh",
+      "email": "amit@gmail.com",
+      "accupation": "HR Department",
+      "salary": "899990",
+      "id": 9
+    },
+    {
+      "empId": "P1346178",
+      "name": "Vipin Upadhyay",
+      "email": "vipin@gmail.com",
+      "accupation": "Software Engineer",
+      "salary": "800000",
+      "id": 10
+    },
+    {
+      "empId": "P1342218",
+      "name": "Rohit Patil",
+      "email": "rohit@gmail.com",
+      "accupation": "Software Associate",
+      "salary": "89929",
+      "id": 11
+    },
+    {
+      "empId": "P891223",
+      "name": "Lorence Diesos",
+      "email": "loren@gmail.com",
+      "accupation": "Fashion Designer",
+      "salary": "1083992",
+      "id": 12
+    },
+    {
+      "empId": "P99192",
+      "name": "Mitesh Sagar",
+      "email": "mitesh@gmail.com",
+      "accupation": "Software Developer",
+      "salary": "1600000",
+      "id": 13
+    },
+    {
+      "empId": "P829910",
+      "name": "Sansa Starck",
+      "email": "sansa@gmail.com",
+      "accupation": "Admin Head",
+      "salary": "899223",
+      "id": 14
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

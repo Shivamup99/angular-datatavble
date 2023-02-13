@@ -7,20 +7,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
 import { ProductsComponent } from './products/products.component';
 import {HttpClientModule} from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { UsersComponent } from './users/users.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     UsersComponent,
     PaginationComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { SearchFilterPipe } from './search-filter.pipe';
     FormsModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    OrderModule
+    OrderModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
